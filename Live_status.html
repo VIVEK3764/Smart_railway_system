@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway System</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #808080;
+            /* background-image: url('vande-Bharat.jpg'); */
+            /* Matches the gray background in the image */
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: #205db7;
+            padding: 10px 0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-circle {
+            width: 30px;
+            height: 30px;
+            background-color: #ccc;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-item {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-item.active {
+            color: #333;
+            font-weight: 500;
+        }
+
+        .right-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-container input {
+            padding: 8px 12px 8px 30px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 14px;
+            width: 180px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+
+        .language-selector {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            color: #444;
+            cursor: pointer;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .login-btn,
+        .signup-btn {
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .login-btn {
+            background-color: transparent;
+            border: 1px solid #ddd;
+            color: #333;
+        }
+
+        .signup-btn {
+            background-color: #333;
+            border: 1px solid #333;
+            color: white;
+        }
+
+        .nav-menu {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu li {
+            margin: 0 20px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* Main Container */
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 60px);
+        }
+
+        /* PNR Section */
+        .pnr-section {
+            text-align: center;
+        }
+
+        /* .pnr-section h2 {
+            color: white;
+            margin-bottom: 20px;
+        } */
+
+        #pnr-form {
+            display: flex;
+            gap: 20px;
+            /* Space between input and button */
+        }
+
+        #pnr-number {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            /* Rounded corners for input field */
+            border: 1px solid #ccc;
+            width: 300px;
+            /* Matches the design width */
+        }
+
+        #check-pnr {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            /* Green button */
+            color: white;
+            border-radius: 25px;
+            /* Fully rounded button */
+            border: none;
+            /* No border around button */
+            cursor: pointer;
+            /* Pointer cursor for button */
+        }
+
+        #check-pnr:hover {
+            background-color: #45a049;
+            /* Slightly darker green on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <!-- <nav>
+            <ul class="nav-menu">
+                <li><a href="main.html">Home</a></li>
+                <li><a href="PNR_status.html">PNR Status</a></li>
+                <li><a href="Live_status.html">Live Running Status</a></li>
+                <li><a href="#">Train Schedule</a></li>
+            </ul>
+        </nav> -->
+        <div class="header">
+            <div class="logo">
+                <div class="logo-circle"></div>
+                <div class="nav">
+                    <a href="main.html" class="nav-item active">Home</a>
+                    <a href="PNR_status.html" class="nav-item">PNR status</a>
+                    <a href="Live_status.html" class="nav-item">Live Running Status
+                    </a>
+                    <a href="#" class="nav-item">Train Schedule</a>
+                </div>
+            </div>
+
+            <div class="right-section">
+                <div class="search-container">
+                    <span class="search-icon"></span>
+                    <input type="text" placeholder="Search">
+                </div>
+                <div class="language-selector">
+                    English (United States) ▼
+                </div>
+                <div class="auth-buttons">
+                    <a href="#" class="login-btn">Log in</a>
+                    <a href="signup.html" class="signup-btn">Sign up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <section class="pnr-section">
+            <h2>Spot your train | Get running status</h2>
+            <form id="pnr-form">
+                <input type="text" id="pnr-number" placeholder="Enter train number" required />
+                <button type="button" id="check-pnr">Check live status</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="text-align:center; padding-top:10px;">
+        <p style="color:white;">&copy; Railway System | All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for Button Click
+        document.getElementById('check-pnr').addEventListener('click', function () {
+            const pnrNumber = document.getElementById('pnr-number').value;
+
+            if (pnrNumber) {
+                alert(`Checking PNR status for ${pnrNumber}...`);
+                // Simulate API call or logic here
+            } else {
+                alert("Please enter a valid PNR number.");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
